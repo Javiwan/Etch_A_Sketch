@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 //Clear the drawing
 	$("#clear").click(function(){
-		$(".pixel").css("background","red");
+		$(".pixel").css("background","#B280E6");
 	});	
 });
 
@@ -32,7 +32,7 @@ function grid(number){
 
 //Make the effect of drawing when hover a square.(Why don't works in the main?)
 	$("#container > div").hover(function(){
-		$(this).css("background", "blue");
+		$(this).css("background", "#090009");
 	});
 }
 
