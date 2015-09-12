@@ -1,13 +1,14 @@
 var $start = true;
 var $random = false;
+var num = 50;
 
 $(document).ready(function(){
 //Start the aplication with six squares
-	grid(64);
+	grid(50);
 });
 //Start the aplication with the desired number of squares
 	$("#start").click(function(){
-		var num = prompt("Enter a width");
+		correctValor();
 		$("#container").empty();
 		$start=true;
 		$random=false;
@@ -21,11 +22,15 @@ $(document).ready(function(){
 
 //Random color
 	$("#random").click(function(){
-		var num = prompt("Enter a width");
+		correctValor();
 		$("#container").empty();
 		$start=false;
 		$random=true;
 		grid(num);
+	});
+
+	$("#author").click(function(){
+		confirm("Javier Mesa Marrero         Jmesamarrero@gmail.com");
 	});
 
 
@@ -34,7 +39,7 @@ $(document).ready(function(){
 //Creates a new grid with the number chosen
 function grid(number){
 
-	var $width = 960/number-2;
+	var $width = 960/number-2.1;
 
 	for(var i=0; i < number; i++){
 		$("#container").append("<div class='line'></div>");
@@ -56,6 +61,13 @@ function grid(number){
 			$(this).css("background", getcolor());
 		});
 	}
+}
+
+function correctValor(){
+	do{
+			num = prompt("Enter a width between 1 and 50");
+		}
+	while(num < 1 || num > 50);
 }
 
 function getcolor(){
